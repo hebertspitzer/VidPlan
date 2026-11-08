@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VidPlan | Conteúdo para o seu momento</title>
+    <style>
+      :root {
+        --wine: #651424;
+        --white: #ffffff;
+        --orange: #ff5825;
+        --wine-dark: #460b16;
+        --surface: rgba(255, 255, 255, 0.08);
+        --border: rgba(255, 255, 255, 0.18);
+      }
+
+      * { box-sizing: border-box; }
+
+      body {
+        min-height: 100vh;
+        margin: 0;
+        color: var(--white);
+        background: radial-gradient(circle at 90% 8%, #8d2437 0, transparent 28rem), var(--wine);
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      .container { width: min(1120px, calc(100% - 48px)); margin: 0 auto; }
+
+      header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 28px 0;
+      }
+
+      .logo { margin: 0; font-size: 1.35rem; font-weight: 800; letter-spacing: .04em; }
+      .logo span { color: var(--orange); }
+
+      nav { display: flex; align-items: center; gap: 26px; }
+      nav a { color: var(--white); font-size: .9rem; text-decoration: none; opacity: .85; }
+      nav a:hover { color: var(--orange); opacity: 1; }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 46px;
+        padding: 0 22px;
+        border: 1px solid var(--orange);
+        border-radius: 9px;
+        color: var(--wine);
+        background: var(--orange);
+        font: inherit;
+        font-weight: 700;
+        cursor: pointer;
+        text-decoration: none;
+        transition: transform .2s, background .2s;
+      }
+      .button:hover { background: #ff7046; transform: translateY(-2px); }
+
+      .hero { display: grid; grid-template-columns: 1.1fr .9fr; gap: 70px; align-items: center; padding: 76px 0 90px; }
+      .eyebrow { margin: 0 0 16px; color: var(--orange); font-size: .8rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+      h1 { max-width: 650px; margin: 0; font-size: clamp(2.7rem, 6vw, 5.2rem); line-height: .98; letter-spacing: -.05em; }
+      h1 em { color: var(--orange); font-style: normal; }
+      .hero-text { max-width: 520px; margin: 26px 0 34px; color: rgba(255,255,255,.82); font-size: 1.08rem; line-height: 1.65; }
+
+      .search-card {
+        padding: 28px;
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        background: var(--surface);
+        box-shadow: 0 24px 60px rgba(31, 3, 10, .28);
+        backdrop-filter: blur(10px);
+      }
+      .search-card h2 { margin: 0 0 8px; font-size: 1.35rem; }
+      .search-card p { margin: 0 0 24px; color: rgba(255,255,255,.72); font-size: .95rem; line-height: 1.5; }
+      label { display: block; margin: 0 0 8px; font-size: .84rem; font-weight: 700; }
+      input, select {
+        width: 100%;
+        height: 48px;
+        margin: 0 0 18px;
+        padding: 0 14px;
+        border: 1px solid transparent;
+        border-radius: 8px;
+        outline: none;
+        color: var(--white);
+        background: rgba(0,0,0,.2);
+        font: inherit;
+      }
+      input::placeholder { color: rgba(255,255,255,.5); }
+      select option { color: var(--wine-dark); }
+      input:focus, select:focus { border-color: var(--orange); }
+      .search-card .button { width: 100%; }
+
+      .section { padding: 0 0 72px; }
+      .section-header { display: flex; align-items: end; justify-content: space-between; gap: 24px; margin-bottom: 24px; }
+      .section-header h2 { margin: 0; font-size: 1.75rem; }
+      .section-header a { color: var(--orange); font-size: .9rem; font-weight: 700; text-decoration: none; }
+      .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+      .card { min-height: 155px; padding: 22px; border: 1px solid var(--border); border-radius: 12px; background: rgba(0,0,0,.12); }
+      .card-icon { color: var(--orange); font-size: 1.5rem; }
+      .card h3 { margin: 18px 0 8px; font-size: 1.05rem; }
+      .card p { margin: 0; color: rgba(255,255,255,.66); font-size: .88rem; line-height: 1.5; }
+
+      footer { padding: 25px 0; border-top: 1px solid var(--border); color: rgba(255,255,255,.62); font-size: .82rem; }
+
+      @media (max-width: 760px) {
+        .container { width: min(100% - 32px, 1120px); }
+        nav a { display: none; }
+        .hero { grid-template-columns: 1fr; gap: 40px; padding: 48px 0 64px; }
+        .cards { grid-template-columns: 1fr; }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="container">
+      <p class="logo">Vid<span>Plan</span>.</p>
+      <nav aria-label="Navegação principal">
+        <a href="#como-funciona">Como funciona</a>
+        <a href="#descobertas">Descobertas</a>
+        <a class="button" href="#buscar">Começar agora</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero container" id="buscar">
+        <div>
+          <p class="eyebrow">Seu tempo, sua escolha</p>
+          <h1>Encontre algo <em>incrível</em> para assistir.</h1>
+          <p class="hero-text">Conte quanto tempo você tem e o que desperta seu interesse. Nós cuidamos das recomendações para o seu próximo momento.</p>
+          <a class="button" href="#recomendacoes">Ver recomendações</a>
+        </div>
+
+        <form class="search-card">
+          <h2>O que você quer ver?</h2>
+          <p>Personalize sua próxima descoberta em poucos segundos.</p>
+          <label for="time">Tempo disponível</label>
+          <input id="time" name="time" type="number" min="1" placeholder="Ex.: 30 minutos" />
+          <label for="interest">Seu interesse</label>
+          <select id="interest" name="interest">
+            <option value="" selected disabled>Escolha um tema</option>
+            <option>Tecnologia</option>
+            <option>Ciência</option>
+            <option>Negócios</option>
+            <option>Entretenimento</option>
+          </select>
+          <button class="button" type="submit">Encontrar conteúdo</button>
+        </form>
+      </section>
+
+      <section class="section container" id="como-funciona">
+        <div class="section-header">
+          <h2>Feito para caber no seu dia</h2>
+          <a href="#buscar">Explorar temas →</a>
+        </div>
+        <div class="cards" id="recomendacoes">
+          <article class="card"><div class="card-icon">01</div><h3>Defina seu tempo</h3><p>Diga quantos minutos você tem disponíveis agora.</p></article>
+          <article class="card"><div class="card-icon">02</div><h3>Escolha um assunto</h3><p>Conte quais temas combinam com sua curiosidade.</p></article>
+          <article class="card"><div class="card-icon">03</div><h3>Aproveite a seleção</h3><p>Receba recomendações relevantes para você assistir.</p></article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="container">© 2026 Recomenda. Descubra algo novo hoje.</footer>
+  </body>
+</html>
