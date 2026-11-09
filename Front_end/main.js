@@ -29,21 +29,25 @@ function handleWeekCheckboxChange(checkbox) {
     }
 }
 
-//Em construção
 function buildRequestPayload() {
     const interestInput = document.getElementById('interest');
     const payload = {
         availableTime: {
-
+            mon: document.querySelector('.time-input[data-week="monday"]').value ? document.querySelector('.time-input[data-week="monday"]').value * 60 : 0,
+            tue: document.querySelector('.time-input[data-week="tuesday"]').value ? document.querySelector('.time-input[data-week="tuesday"]').value * 60 : 0,
+            wed: document.querySelector('.time-input[data-week="wednesday"]').value ? document.querySelector('.time-input[data-week="wednesday"]').value * 60 : 0,
+            thu: document.querySelector('.time-input[data-week="thursday"]').value ? document.querySelector('.time-input[data-week="thursday"]').value * 60 : 0,
+            fri: document.querySelector('.time-input[data-week="friday"]').value ? document.querySelector('.time-input[data-week="friday"]').value * 60 : 0,
+            sat: document.querySelector('.time-input[data-week="saturday"]').value ? document.querySelector('.time-input[data-week="saturday"]').value * 60 : 0,
+            sun: document.querySelector('.time-input[data-week="sunday"]').value ? document.querySelector('.time-input[data-week="sunday"]').value * 60 : 0,
         },
         interests: interestInput.value
     };
     return payload;
 }
 
-//Em construção
 function callAPI() {
-    fetch('/api/recommendations', {
+    fetch('http://localhost:3000/api/recommendations', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -52,9 +56,9 @@ function callAPI() {
     })
     .then(response => response.json())
     .then(data => {
-        // Processar a resposta da API
+        console.log(data);
     })
     .catch(error => {
-        // Lidar com erros
+        console.error('Error:', error);
     });
 }

@@ -4,40 +4,40 @@ const utilsTime = require('../utils/time.utils');
 exports.generate = async (availableTime, interest) => {
 
     let retorno = [{
-            diaSemana: 'domingo',
+            diaSemana: 'monday',
             videos: [],
             totalDuration: 0,
-            availableTime: availableTime.dom
+            availableTime: availableTime.mon
         },{
-            diaSemana: 'segunda',
+            diaSemana: 'tuesday',
             videos: [],
             totalDuration: 0,
-            availableTime: availableTime.seg
+            availableTime: availableTime.tue
         },{
-            diaSemana: 'terca',
+            diaSemana: 'wednesday',
             videos: [],
             totalDuration: 0,
-            availableTime: availableTime.ter
+            availableTime: availableTime.wed
         },{
-            diaSemana: 'quarta',
+            diaSemana: 'thursday',
             videos: [],
             totalDuration: 0,
-            availableTime: availableTime.qua
+            availableTime: availableTime.thu
         },{
-            diaSemana: 'quinta',
+            diaSemana: 'friday',
             videos: [],
             totalDuration: 0,
-            availableTime: availableTime.qui
+            availableTime: availableTime.fri
         },{
-            diaSemana: 'sexta',
+            diaSemana: 'saturday',
             videos: [],
             totalDuration: 0,
-            availableTime: availableTime.sex
+            availableTime: availableTime.sat
         },{
-            diaSemana: 'sabado',
+            diaSemana: 'sunday',
             videos: [],
             totalDuration: 0,
-            availableTime: availableTime.sab
+            availableTime: availableTime.sun
         }
     ]
 
