@@ -1,5 +1,5 @@
 const checkboxes = document.querySelectorAll('.week-checkbox');
-const form = document.getElementById('myForm');
+const form = document.getElementById('form-main');
 
 checkboxes.forEach(checkbox => {
   checkbox.addEventListener('click', () => handleWeekCheckboxChange(checkbox));
@@ -16,6 +16,10 @@ function handleWeekCheckboxChange(checkbox) {
 
     const timeLabel = document.querySelector(`.time-label[data-week="${week}"]`);
     if (timeLabel) {
+        const parent = timeLabel.closest('.form-group');
+        if (parent) {
+            parent.style.display = isChecked ? 'block' : 'none';
+        }
         timeLabel.style.display = isChecked ? 'block' : 'none';
     }
 

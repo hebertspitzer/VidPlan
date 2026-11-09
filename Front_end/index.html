@@ -30,56 +30,81 @@
       </div>
     </section>
     <section class="section container">
-      <form class="search-card">
+      <form id="form-main" class="search-card">
         <h2>O que você quer ver?</h2>
         <p>Personalize sua próxima descoberta em poucos segundos.</p>
         <fieldset class="days-fieldset">
           <legend>Dias da semana</legend>
           <div class="days-grid">
             <label class="day-option" for="monday">
-              <input class="week-checkbox" data-week="monday" id="monday" name="monday" type="checkbox" checked/>
+              <input class="week-checkbox" data-week="monday" id="monday" name="monday" type="checkbox" checked />
               <span>Segunda</span>
             </label>
             <label class="day-option" for="tuesday">
-              <input class="week-checkbox" data-week="tuesday" id="tuesday" name="tuesday" type="checkbox" checked/>
+              <input class="week-checkbox" data-week="tuesday" id="tuesday" name="tuesday" type="checkbox" checked />
               <span>Terça</span>
             </label>
             <label class="day-option" for="wednesday">
-              <input class="week-checkbox" data-week="wednesday" id="wednesday" name="wednesday" type="checkbox" checked/>
+              <input class="week-checkbox" data-week="wednesday" id="wednesday" name="wednesday" type="checkbox"
+                checked />
               <span>Quarta</span>
             </label>
             <label class="day-option" for="thursday">
-              <input class="week-checkbox" data-week="thursday" id="thursday" name="thursday" type="checkbox" checked/>
+              <input class="week-checkbox" data-week="thursday" id="thursday" name="thursday" type="checkbox" checked />
               <span>Quinta</span>
             </label>
             <label class="day-option" for="friday">
-              <input class="week-checkbox" data-week="friday" id="friday" name="friday" type="checkbox" checked/>
+              <input class="week-checkbox" data-week="friday" id="friday" name="friday" type="checkbox" checked />
               <span>Sexta</span>
             </label>
             <label class="day-option" for="saturday">
-              <input class="week-checkbox" data-week="saturday" id="saturday" name="saturday" type="checkbox" checked/>
+              <input class="week-checkbox" data-week="saturday" id="saturday" name="saturday" type="checkbox" checked />
               <span>Sábado</span>
             </label>
             <label class="day-option" for="sunday">
-              <input class="week-checkbox" data-week="sunday" id="sunday" name="sunday" type="checkbox" checked/>
+              <input class="week-checkbox" data-week="sunday" id="sunday" name="sunday" type="checkbox" checked />
               <span>Domingo</span>
             </label>
           </div>
         </fieldset>
-        <label class="time-label" data-week="monday" for="timeMonday">Tempo disponível na segunda-feira</label>
-        <input class="time-input" data-week="monday" id="timeMonday" name="timeMonday" type="number" min="1" placeholder="Ex.: 30 minutos" />
-        <label class="time-label" data-week="tuesday" for="timetuesday">Tempo disponível na terça-feira</label>
-        <input class="time-input" data-week="tuesday" id="timetuesday" name="timetuesday" type="number" min="1" placeholder="Ex.: 30 minutos" />
-        <label class="time-label" data-week="wednesday" for="timeWednesday">Tempo disponível na quarta-feira</label>
-        <input class="time-input" data-week="wednesday" id="timeWednesday" name="timeWednesday" type="number" min="1" placeholder="Ex.: 30 minutos" />
-        <label class="time-label" data-week="thursday" for="timeThursday">Tempo disponível na quinta-feira</label>
-        <input class="time-input" data-week="thursday" id="timeThursday" name="timeThursday" type="number" min="1" placeholder="Ex.: 30 minutos" />
-        <label class="time-label" data-week="friday" for="timeFriday">Tempo disponível na sexta-feira</label>
-        <input class="time-input" data-week="friday" id="timeFriday" name="timeFriday" type="number" min="1" placeholder="Ex.: 30 minutos" />
-        <label class="time-label" data-week="saturday" for="timeSaturday">Tempo disponível no sábado</label>
-        <input class="time-input" data-week="saturday" id="timeSaturday" name="timeSaturday" type="number" min="1" placeholder="Ex.: 30 minutos" />
-        <label class="time-label" data-week="sunday" for="timeSunday">Tempo disponível no domingo</label>
-        <input class="time-input" data-week="sunday" id="timeSunday" name="timeSunday" type="number" min="1" placeholder="Ex.: 30 minutos" />
+        <div class="form-timeAvaible">
+          <div class="form-group">
+            <label class="time-label" data-week="monday" for="timeMonday">Tempo disponível na segunda-feira</label>
+            <input class="time-input" data-week="monday" id="timeMonday" name="timeMonday" type="number" min="1"
+              placeholder="Ex.: 30 minutos" />
+          </div>
+          <div class="form-group">
+            <label class="time-label" data-week="tuesday" for="timetuesday">Tempo disponível na terça-feira</label>
+            <input class="time-input" data-week="tuesday" id="timetuesday" name="timetuesday" type="number" min="1"
+              placeholder="Ex.: 30 minutos" />
+          </div>
+          <div class="form-group">
+            <label class="time-label" data-week="wednesday" for="timeWednesday">Tempo disponível na quarta-feira</label>
+            <input class="time-input" data-week="wednesday" id="timeWednesday" name="timeWednesday" type="number"
+              min="1" placeholder="Ex.: 30 minutos" />
+          </div>
+          <div class="form-group">
+            <label class="time-label" data-week="thursday" for="timeThursday">Tempo disponível na quinta-feira</label>
+            <input class="time-input" data-week="thursday" id="timeThursday" name="timeThursday" type="number" min="1"
+              placeholder="Ex.: 30 minutos" />
+          </div>
+          <div class="form-group">
+            <label class="time-label" data-week="friday" for="timeFriday">Tempo disponível na sexta-feira</label>
+            <input class="time-input" data-week="friday" id="timeFriday" name="timeFriday" type="number" min="1"
+              placeholder="Ex.: 30 minutos" />
+          </div>
+          <div class="form-group">
+            <label class="time-label" data-week="saturday" for="timeSaturday">Tempo disponível no sábado</label>
+            <input class="time-input" data-week="saturday" id="timeSaturday" name="timeSaturday" type="number" min="1"
+              placeholder="Ex.: 30 minutos" />
+          </div>
+          <div class="form-group">
+            <label class="time-label" data-week="sunday" for="timeSunday">Tempo disponível no domingo</label>
+            <input class="time-input" data-week="sunday" id="timeSunday" name="timeSunday" type="number" min="1"
+              placeholder="Ex.: 30 minutos" />
+          </div>
+        </div>
+
         <label for="interest">Seu interesse</label>
         <select id="interest" name="interest">
           <option value="" selected disabled>Escolha um tema</option>

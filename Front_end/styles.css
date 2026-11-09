@@ -150,6 +150,37 @@ h1 em {
     line-height: 1.5;
 }
 
+.form-timeAvaible {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+}
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+
 label {
     display: block;
     margin: 0 0 8px;
@@ -325,5 +356,9 @@ footer {
         grid-template-columns: repeat(7, minmax(72px, 1fr));
         overflow-x: auto;
         padding-bottom: 4px;
+    }
+
+    .form-timeAvaible {
+        grid-template-columns: 1fr;
     }
 }
